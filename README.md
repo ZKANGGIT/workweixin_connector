@@ -1,2 +1,2 @@
 # workweixin_connnector
-企业微信账户登陆odoo连接器插件
+企业微信账户登陆odoo插件
