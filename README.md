@@ -1,0 +1,2 @@
+# workweixin_connnector
+企业微信账户登陆odoo连接器
