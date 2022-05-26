@@ -1,0 +1,56 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="workweixin.list">
+      <field name="name">Connector Config</field>
+      <field name="model">workweixin.workweixin</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="agentid"/>
+          <field name="redirect_uri"/>
+          <field name="secret"/>
+          <field name="corpid"/>
+          <field name="corpsecret"/>
+          <button class="oe_highlight" type="object" name="syn_users" string="用户同步" />
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="workweixin.Form">
+      <field name="name">Connector Config</field>
+      <field name="model">workweixin.workweixin</field>
+      <field name="arch" type="xml">
+        <form>
+          <group style="width: 50%">
+            <field name="name"/>
+            <field name="agentid"/>
+            <field name="redirect_uri"/>
+          </group>
+          <group style="width: 50%">
+            <field name="secret"/>
+            <field name="corpid"/>
+            <field name="corpsecret"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="workweixin.action_window">
+      <field name="name">Connector Config</field>
+      <field name="res_model">workweixin.workweixin</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+  <!-- Top menu item -->
+    <menuitem name="workweixin" id="workweixin.menu_root"/>
+
+    <!-- menu categories -->
+    <menuitem name="Connector Config" groups="workweixin_group_base" id="workweixin.menu_1" parent="workweixin.menu_root"/>
+
+    <!-- actions -->
+    <menuitem name="Connector Config" id="workweixin.menu_1_list" parent="workweixin.menu_1"  action="workweixin.action_window"/>
+
+  </data>
+</odoo>

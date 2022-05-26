@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="workweixin_module_category" model="ir.module.category">
+            <field name="name">企业微信连接器</field>
+            <field name="description">企业微信连接器</field>
+        </record>
+        <record id="workweixin_group_base" model="res.groups">
+            <field name="category_id" ref="workweixin_module_category"></field>
+            <field name="name">微信连接器基本权限</field>
+            <field name="implied_ids" eval="[(4,ref('base.group_user'))]"></field>
+            <field name="comment">微信连接器查看列表数据</field>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+    </data>
+
+</odoo>
